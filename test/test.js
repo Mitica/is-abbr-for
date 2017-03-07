@@ -1,7 +1,7 @@
 'use strict';
 
-const isAbbrOf = require('../lib');
-const assert = require('assert');
+var isAbbrOf = require('../lib');
+var assert = require('assert');
 
 describe('isAbbrOf', function () {
     it('US == United States', function () {
