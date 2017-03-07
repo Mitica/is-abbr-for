@@ -1,0 +1,41 @@
+{
+  "name": "is-abbr-of",
+  "version": "0.0.1",
+  "description": "A nodejs module for detecting the long form of an abbreviation",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "pretest": "npm run tsc",
+    "test": "mocha",
+    "tsc": "tsc",
+    "tscw": "tsc -w",
+    "preversion": "npm run tsc",
+    "postversion": "git push --follow-tags",
+    "prepublish": "npm run tsc"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitica/is-abbr-of.git"
+  },
+  "keywords": [
+    "is-abbr",
+    "abbreviation",
+    "abbr-of",
+    "abbr",
+    "is-abbr-of"
+  ],
+  "author": "Dumitru Cantea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mitica/is-abbr-of/issues"
+  },
+  "homepage": "https://github.com/Mitica/is-abbr-of#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "mocha": "^3.2.0",
+    "typescript": "^2.2.1"
+  }
+}
