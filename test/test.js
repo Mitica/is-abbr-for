@@ -43,4 +43,7 @@ describe('isAbbrOf', function () {
     it('USF != United States', function () {
         assert.equal(false, isAbbrOf('Us', 'United States'));
     });
+    it('UF != United States-', function () {
+        assert.equal(false, isAbbrOf('UF', 'United States-'));
+    });
 });
