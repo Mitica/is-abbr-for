@@ -5,15 +5,8 @@ export = function (abbr: string, s: string): boolean {
 
 function isStartWordAbbr(abbr: string, s: string): boolean {
     abbr = abbr.replace(/[\.\s,`']+/g, '');
-    let words: string[] = s.split(/[ ]+/g).filter(word => word && word.trim().length > 0);
-    if (!detectStartWordAbbr(abbr, words)) {
-        if (s.indexOf('-') > 0) {
-            words = s.split(/[ -]+/g).filter(word => word && word.trim().length > 0);
-            return detectStartWordAbbr(abbr, words);
-        }
-        return false;
-    }
-    return true;
+    let words: string[] = s.split(/[ ]+/g).filter(word => word && word.trim());
+    return detectStartWordAbbr(abbr, words);
 }
 
 function detectStartWordAbbr(abbr: string, words: string[]): boolean {
@@ -33,11 +26,15 @@ function detectStartWordAbbr(abbr: string, words: string[]): boolean {
 }
 
 function compareStartWords(abbr: string, words: string[]): boolean {
-    if (abbr.length !== words.length) {
+    if (abbr.length > words.length) {
         return false;
     }
-    for (var i = 0; i < words.length; i++) {
+    for (let i = 0; i < words.length; i++) {
         if (abbr[i] !== words[i][0] && abbr[i] !== words[i][0].toUpperCase()) {
+            if (words[i][0] === words[i][0].toLowerCase()) {
+                words = words.slice(0, i).concat(words.slice(i + 1));
+                return compareStartWords(abbr, words);
+            }
             return false;
         }
     }

@@ -41,9 +41,12 @@ describe('isAbbrOf', function () {
         assert.equal(false, isAbbrOf('Us', 'United States'));
     });
     it('USF != United States', function () {
-        assert.equal(false, isAbbrOf('Us', 'United States'));
+        assert.equal(false, isAbbrOf('USF', 'United States'));
     });
     it('UF != United States-', function () {
         assert.equal(false, isAbbrOf('UF', 'United States-'));
     });
+    it('ФАДН == Федерального агентства по делам национальностей', function () {
+        assert.equal(true, isAbbrOf('ФАДН', 'Федерального агентства по делам национальностей'));
+    })
 });
