@@ -1,6 +1,6 @@
 {
   "name": "is-abbr-of",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A nodejs module for detecting the long form of an abbreviation",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
